@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cpqwdf4s3a7u8"]
+
+[ext_resource type="Script" uid="uid://0y1p7wrvyubl" path="res://Zombie.gd" id="1_roy8y"]
+[ext_resource type="Texture2D" uid="uid://j3x6gom51pvw" path="res://Sprites/undefined - Imgur.png" id="2_jmu02"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pg6k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pg6k"]
+transparency = 1
+cull_mode = 1
+shading_mode = 0
+billboard_mode = 2
+
+[sub_resource type="Animation" id="Animation_eseir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7nqyo"]
+resource_name = "die"
+length = 0.7340007
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15646559, 0.318703, 0.49056008, 0.69552183),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_lnshm"]
+resource_name = "walk"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14892194, 0.29256222, 0.5179847),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5rsa"]
+_data = {
+&"RESET": SubResource("Animation_eseir"),
+&"die": SubResource("Animation_7nqyo"),
+&"walk": SubResource("Animation_lnshm")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=773369705]
+script = ExtResource("1_roy8y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1341853510]
+shape = SubResource("CapsuleShape3D_3pg6k")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=301610359]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2087418832]
+material_overlay = SubResource("StandardMaterial3D_3pg6k")
+billboard = 2
+texture = ExtResource("2_jmu02")
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=592884842]
+libraries/ = SubResource("AnimationLibrary_x5rsa")

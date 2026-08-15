@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dirdwml75r7sm"]
+
+[ext_resource type="PackedScene" uid="uid://c6r1miumb1oas" path="res://player.tscn" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://cpqwdf4s3a7u8" path="res://zombie.tscn" id="2_tlwt5"]
+
+[node name="World" type="Node3D" unique_id=2082156957]
+
+[node name="player" parent="." unique_id=237946224 instance=ExtResource("1_fj7yv")]
+
+[node name="CharacterBody3D" parent="." unique_id=773369705 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.536934, 0, -21.588932)
+
+[node name="CharacterBody3D2" parent="." unique_id=692262063 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.223312, 0, -21.588932)
+
+[node name="CharacterBody3D3" parent="." unique_id=1240247216 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049339294, 0, -17.675848)
+
+[node name="CharacterBody3D4" parent="." unique_id=2058680779 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 0, -51.428467)
+
+[node name="CharacterBody3D5" parent="." unique_id=1590062789 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 0, -19.104591)
+
+[node name="CharacterBody3D6" parent="." unique_id=1376448200 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 0, -19.104591)
+
+[node name="CharacterBody3D7" parent="." unique_id=730529500 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 0, -6.516239)
+
+[node name="CharacterBody3D8" parent="." unique_id=407275282 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 0, -6.516239)
+
+[node name="CharacterBody3D9" parent="." unique_id=2094193771 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 0, -23.731056)
+
+[node name="CharacterBody3D10" parent="." unique_id=49767538 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4195175, 0, -23.731056)
+
+[node name="CharacterBody3D11" parent="." unique_id=1873569998 instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4195175, 0, -23.731056)

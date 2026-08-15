@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://c6r1miumb1oas"]
+
+[ext_resource type="Script" uid="uid://blp08625gpngv" path="res://player.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c5nqc8a6meg4c" path="res://Sprites/undefined - Imgur(1).png" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ddtpm8xkwc5c3" path="res://Sprites/1 - cyZUtxf.png" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pg6k"]
+
+[sub_resource type="Animation" id="Animation_hqtel"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_sweqy"]
+resource_name = "tiro"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.16666667, 0.5, 2, -0.16666667, -0.33333334, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_2hs0m"]
+resource_name = "tiro2"
+length = 0.1676048
+step = 2.0
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": -0.0009096642
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.006694056, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.1596705),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 2, 3, 3, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jxqw"]
+_data = {
+&"RESET": SubResource("Animation_hqtel"),
+&"tiro": SubResource("Animation_sweqy"),
+&"tiro2": SubResource("Animation_2hs0m")
+}
+
+[node name="player" type="CharacterBody3D" unique_id=237946224]
+script = ExtResource("1_i3pqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1492007323]
+shape = SubResource("CapsuleShape3D_3pg6k")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1256554092]
+target_position = Vector3(0, 0, -2000)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=11575516]
+libraries/ = SubResource("AnimationLibrary_1jxqw")
+speed_scale = 0.4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1114741353]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1716611989]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control" unique_id=2097378168]
+position = Vector2(250, 88)
+texture = ExtResource("1_onrkg")
+hframes = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1514279361]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect" unique_id=592684503]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1219271272]
+current = true
