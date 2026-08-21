@@ -1,36 +1,39 @@
-# DOOM Clone 🎮
+# DOOM Clone
 
-Um clone inspirado em **DOOM**, desenvolvido como projeto de estudo utilizando **Godot 4** e **GDScript**.
+FPS 3D inspirado em DOOM, desenvolvido em Godot 4 e GDScript como projeto de estudo.
 
-## 🚀 Sobre o projeto
+## Sobre
 
-Este projeto é um experimento de desenvolvimento de jogos 3D, focado em reproduzir algumas das características clássicas de jogos FPS, como movimentação em primeira pessoa, inimigos e combate.
+Experimento de desenvolvimento de jogos 3D focado em mecânicas clássicas de FPS: movimentação em primeira pessoa, combate e inimigos com IA simples. Foi meu primeiro contato com a Godot Engine, então parte do código ainda reflete essa curva de aprendizado inicial — a ideia é continuar evoluindo o projeto e aprofundar GDScript aos poucos.
 
-O projeto também faz parte do meu aprendizado com a **Godot Engine** e desenvolvimento de jogos em 3D.
+## Tecnologias
 
-## 🛠️ Tecnologias
+- Godot 4
+- GDScript
+- Blender
+- Git / GitHub
 
-* Godot 4
-* GDScript
-* Blender
-* Git / GitHub
+## Funcionalidades
 
-## 🎮 Funcionalidades
+**Implementado**
+- Movimentação do jogador em primeira pessoa, com gravidade e colisão
+- Sistema de tiro via raycast
+- Inimigo com IA de perseguição
+- Sistema de vida do jogador, com barra visual e cor dinâmica conforme o dano
+- Sons de tiro e morte
+- Animação de morte (câmera inclinando e descendo, arma desaparecendo)
+- Cenário de teste com ambientação visual (céu, luz direcional e neblina)
 
-* [x] Movimentação do jogador
-* [x] Sistema básico de inimigos
-* [x] Animações
-* [ ] Cenário 3D
-* [ ] Sistema de combate
-* [ ] Armas
-* [ ] Sistema de vida
-* [ ] Mais tipos de inimigos
-* [ ] Level design
-* [ ] Boss
+**Planejado**
+- Munição e recarga
+- Spawn dinâmico de inimigos
+- Mais tipos de inimigos
+- Level design definitivo
+- Boss
 
-## 📂 Estrutura
+## Estrutura
 
-```text
+```
 doom-clone/
 ├── Sprites/
 ├── player.gd
@@ -41,16 +44,14 @@ doom-clone/
 └── project.godot
 ```
 
-## 📌 Status
+## Status
 
-🚧 **Em desenvolvimento**
+Em desenvolvimento. O projeto avança sessão a sessão, priorizando entender cada sistema implementado.
 
-O projeto está sendo desenvolvido gradualmente enquanto novos sistemas e mecânicas são implementados.
+## Objetivo
 
-## 🎯 Objetivo
-
-Aprender e praticar desenvolvimento de jogos 3D com Godot, explorando sistemas de movimentação, inimigos, animações, combate e criação de níveis.
+Praticar desenvolvimento de jogos 3D com Godot: movimentação, física, inimigos, combate e level design.
 
 ---
 
-Desenvolvido por **Roberto Dias**.
+Desenvolvido por Roberto Dias.
