@@ -3,39 +3,64 @@
 [ext_resource type="PackedScene" uid="uid://c6r1miumb1oas" path="res://player.tscn" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://cpqwdf4s3a7u8" path="res://zombie.tscn" id="2_tlwt5"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlwt5"]
+sky_top_color = Color(0.2901961, 0.15686275, 0.09411765, 1)
+sky_horizon_color = Color(0.8509804, 0.49803922, 0.23921569, 1)
+ground_bottom_color = Color(0.101960786, 0.05882353, 0.03137255, 1)
+ground_horizon_color = Color(0.72156864, 0.3882353, 0.18039216, 1)
+sun_angle_max = 45.0
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_tlwt5")
+
+[sub_resource type="Environment" id="Environment_3pg6k"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+fog_enabled = true
+fog_light_color = Color(0.5411765, 0.3529412, 0.22745098, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.03
+
 [node name="World" type="Node3D" unique_id=2082156957]
 
 [node name="player" parent="." unique_id=237946224 instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CharacterBody3D" parent="." unique_id=773369705 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.536934, 0, -21.588932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.536934, 1, -21.588932)
 
 [node name="CharacterBody3D2" parent="." unique_id=692262063 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.223312, 0, -21.588932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.223312, 1, -21.588932)
 
 [node name="CharacterBody3D3" parent="." unique_id=1240247216 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049339294, 0, -17.675848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049339294, 1, -17.675848)
 
 [node name="CharacterBody3D4" parent="." unique_id=2058680779 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 0, -51.428467)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 1, -51.428467)
 
 [node name="CharacterBody3D5" parent="." unique_id=1590062789 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 0, -19.104591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.41513, 1, -19.104591)
 
 [node name="CharacterBody3D6" parent="." unique_id=1376448200 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 0, -19.104591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 1, -19.104591)
 
 [node name="CharacterBody3D7" parent="." unique_id=730529500 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 0, -6.516239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.180176, 1, -6.516239)
 
 [node name="CharacterBody3D8" parent="." unique_id=407275282 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 0, -6.516239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 1, -6.516239)
 
 [node name="CharacterBody3D9" parent="." unique_id=2094193771 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 0, -23.731056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.494339, 1, -23.731056)
 
-[node name="CharacterBody3D10" parent="." unique_id=49767538 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4195175, 0, -23.731056)
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=768936834]
+use_collision = true
+size = Vector3(50, 0.2, 50)
 
-[node name="CharacterBody3D11" parent="." unique_id=1873569998 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4195175, 0, -23.731056)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1111647380]
+environment = SubResource("Environment_3pg6k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=691689892]
+transform = Transform3D(0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, -0.35355338, 0.6123724, 0, 16.042416, 24.5334)
+light_color = Color(1, 0.54901963, 0.25882354, 1)
+light_energy = 0.5

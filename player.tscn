@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://blp08625gpngv" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c5nqc8a6meg4c" path="res://Sprites/undefined - Imgur(1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ddtpm8xkwc5c3" path="res://Sprites/1 - cyZUtxf.png" id="2_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://cmligaiusaw4r" path="res://sounds/Pistol_Sound.mp3" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://buflogpyens3u" path="res://sounds/Death_Sound.mp3" id="5_sweqy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pg6k"]
 
@@ -74,7 +76,7 @@ target_position = Vector3(0, 0, -2000)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=11575516]
 libraries/ = SubResource("AnimationLibrary_1jxqw")
-speed_scale = 0.4
+speed_scale = 0.2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1114741353]
 
@@ -125,5 +127,32 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_i3pqv")
 
+[node name="vida" type="Label" parent="CanvasLayer" unique_id=77327074]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="barra_vida" type="ProgressBar" parent="CanvasLayer" unique_id=1947049657]
+offset_right = 233.0
+offset_bottom = 27.0
+value = 100.0
+show_percentage = false
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1219271272]
 current = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1392841161]
+wait_time = 0.5
+one_shot = true
+
+[node name="som_tiro" type="AudioStreamPlayer3D" parent="." unique_id=1209663198]
+stream = ExtResource("4_hqtel")
+
+[node name="som_morte" type="AudioStreamPlayer3D" parent="." unique_id=2124554909]
+stream = ExtResource("5_sweqy")
+
+[node name="Timer2" type="Timer" parent="." unique_id=2018058341]
+wait_time = 1.41
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
